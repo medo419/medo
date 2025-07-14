@@ -52,6 +52,27 @@ Description: File Manager for iPhone, iPad, iPod Touch. Supports iOS 11+. This v
 Name: Filza File Manager 64-bit
 Author: TIGI Software
 
+Package: com.sparklechan.swifty
+Architecture: iphoneos-arm64e
+Version: 2.0~alpha5
+Section: Utilities
+Maintainer: FCCT
+Depends: swift, clang-14, ldid, git
+Conflicts: com.sparklechan.sparkkit
+Filename: ./debs//FridaCodeManager.2.0~alpha5.arm64e.deb
+Size: 3083888
+MD5sum: 51f04e216cb11997b6ecb72b46480deb
+SHA1: 0f6d3a995939ef41ca9e89b7359d9be365567203
+SHA256: 8a1dfcdb2094547a58b0c0f829f1992221ea1b1cc7ecf59e4e7228d3bf9c5110
+SHA512: af6c9c24beac28d46e958e04f07545e26159c39a2c7d694dfa2d5d86a789cb73c48239a039a01910fe606ae79a6abd53df09753300e5ab6c95ac5f8a76030c47
+Description: Full fledged Xcode-like IDE for iOS
+Name: FridaCodeManager
+Icon: https://img.chariz.cloud/icon/fridacodemanager/icon@3x.png
+Depiction: https://chariz.com/get/fridacodemanager
+SileoDepiction: https://chariz.com/api/sileo/package/com.sparklechan.swifty/depiction.json
+Header: https://cdn.chariz.cloud/sileo-banner/fridacodemanager.jpg
+Author: FCCT
+
 Package: com.ipapplus.instarab
 Architecture: iphoneos-arm64
 Version: 1.4.0
