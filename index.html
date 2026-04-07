@@ -1,259 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-sec: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-<style>
-:root {
-    --bg-color: #0f172a;
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --accent: #38bdf8;
-    --text-main: #f1f5f9;
-    --text-sec: #94a3b8;
-    --glass-border: rgba(255, 255, 255, 0.1);
-}
+        body {
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 40%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Tajawal', sans-serif;
-    -webkit-tap-highlight-color: transparent;
-}
+        canvas#snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
 
-body {
-    min-height: 100vh;
-    background-color: var(--bg-color);
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 40%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow: hidden;
-    position: relative;
-}
+        .card {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 400px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: floatUp 0.8s ease-out;
+        }
 
-canvas#snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.3;
-}
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
 
-.card {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 400px;
-    background: var(--card-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 30px;
-    padding: 40px 25px;
-    text-align: center;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    animation: floatUp 0.8s ease-out;
-}
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.profile-container {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-}
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
 
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 30px rgba(56,189,248,0.3);
-    transition: transform 0.3s;
-}
+        .status-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #10b981;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid var(--card-bg);
+        }
 
-.profile-img:hover {
-    transform: scale(1.05) rotate(3deg);
-}
+        h1 {
+            color: var(--text-main);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
 
-.status-badge {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: #10b981;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 3px solid var(--card-bg);
-}
+        .bio {
+            color: var(--text-sec);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-h1 {
-    color: var(--text-main);
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-}
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.bio {
-    color: var(--text-sec);
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 20px;
+            border-radius: 18px;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
 
-.links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.3);
+        }
 
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 16px 20px;
-    border-radius: 18px;
-    color: var(--text-main);
-    text-decoration: none;
-    transition: 0.3s;
-}
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-.btn:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-2px);
-    border-color: var(--accent);
-}
+        .btn i {
+            font-size: 1.2rem;
+            width: 25px;
+            text-align: center;
+        }
 
-.btn-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+        .btn .arrow {
+            color: var(--text-sec);
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
 
-.btn i {
-    width: 25px;
-    text-align: center;
-}
+        .btn:hover .arrow {
+            transform: translateX(5px);
+            color: var(--accent);
+        }
 
-/* الألوان */
-.btn-sileo i { color: #38bdf8; }
-.btn-twitter i { color: #1da1f2; }
-.btn-github i { color: #ffffff; }
-.btn-snapchat i { color: #fffc00; }
+        .btn-sileo i { color: #38bdf8; }
+        .btn-twitter i { color: #1da1f2; }
+        .btn-github i { color: #ffffff; }
+        .btn-snapchat i { color: #fffc00; } /* 👈 تمت الإضافة */
 
-.btn-more {
-    cursor: pointer;
-    background: rgba(56,189,248,0.1);
-}
+        .btn-more { cursor: pointer; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); }
+        .btn-more:hover { background: rgba(56, 189, 248, 0.2); }
 
-.hidden-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.5s;
-    opacity: 0;
-}
+        .hidden-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+            opacity: 0;
+        }
 
-.hidden-content.active {
-    max-height: 300px;
-    opacity: 1;
-    margin-top: 15px;
-}
+        .hidden-content.active {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 15px;
+        }
 
-.footer {
-    margin-top: 30px;
-    font-size: 0.8rem;
-    color: var(--text-sec);
-}
+        .visualizer {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            height: 20px;
+            align-items: flex-end;
+            margin-top: -20px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
 
-@keyframes floatUp {
-    from {opacity:0; transform:translateY(30px);}
-    to {opacity:1; transform:translateY(0);}
-}
-</style>
+        .visualizer.playing {
+            opacity: 1;
+        }
+
+        .bar {
+            width: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+            animation: bounce 1s infinite ease-in-out;
+        }
+
+        .bar:nth-child(2) { animation-delay: 0.1s; height: 15px; }
+        .bar:nth-child(3) { animation-delay: 0.2s; height: 20px; }
+        .bar:nth-child(4) { animation-delay: 0.3s; height: 12px; }
+
+        @keyframes bounce {
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1.2); }
+        }
+
+        @keyframes floatUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: var(--text-sec);
+            opacity: 0.6;
+        }
+
+    </style>
 </head>
-
 <body>
 
-<canvas id="snow"></canvas>
+    <canvas id="snow"></canvas>
 
-<div class="card">
+    <div class="card">
+        <div class="profile-container">
+            <img src="CydiaIcon.png" alt="Medo" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
+            <div class="status-badge"></div>
+        </div>
+        
+        <h1>Medo</h1>
+        <div class="bio">
+            <i class="fa-solid fa-code"></i> Systems & Apps
+        </div>
 
-<div class="profile-container">
-<img src="CydiaIcon.png" class="profile-img">
-<div class="status-badge"></div>
-</div>
+        <div class="visualizer" id="visualizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
 
-<h1>Medo</h1>
+        <div class="links-container">
+            <a href="https://medo419.github.io/medo/" class="btn btn-sileo" target="_blank">
+                <div class="btn-content">
+                    <i class="fa-solid fa-box-open"></i>
+                    <span>Add to Sileo</span>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
 
-<div class="bio">
-<i class="fa-solid fa-code"></i> Systems & Apps
-</div>
+            <a href="https://x.com/ei_6m?s=21" class="btn btn-twitter" target="_blank">
+                <div class="btn-content">
+                    <i class="fa-brands fa-twitter"></i>
+                    <span>Twitter</span>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
 
-<div class="links-container">
+            <!-- 👇 زر السناب (تمت إضافته بدون حذف شيء) -->
+            <a href="javascript:void(0)" class="btn btn-snapchat" onclick="openSnap()">
+                <div class="btn-content">
+                    <i class="fa-brands fa-snapchat"></i>
+                    <span>Snapchat</span>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
 
-<a href="sileo://source/https://medo419.github.io/medo/" class="btn btn-sileo">
-<div class="btn-content">
-<i class="fa-solid fa-box-open"></i>
-<span>Add to Sileo</span>
-</div>
-<i class="fa-solid fa-chevron-right"></i>
-</a>
+            <a href="https://github.com/medo419?tab=repositories" class="btn btn-github" target="_blank">
+                <div class="btn-content">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Github</span>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
 
-<a href="https://x.com/ei_6m?s=21" class="btn btn-twitter">
-<div class="btn-content">
-<i class="fa-brands fa-twitter"></i>
-<span>Twitter</span>
-</div>
-<i class="fa-solid fa-chevron-right"></i>
-</a>
+            <div class="btn btn-more" onclick="toggleMore()">
+                <div class="btn-content">
+                    <i class="fa-solid fa-layer-group" id="more-icon"></i>
+                    <span id="more-text">More & Quran</span>
+                </div>
+                <i class="fa-solid fa-play" id="play-icon" style="font-size: 0.8rem;"></i>
+            </div>
 
-<!-- 👇 سناب يفتح التطبيق -->
-<a href="javascript:void(0)" class="btn btn-snapchat" onclick="openSnap()">
-<div class="btn-content">
-<i class="fa-brands fa-snapchat"></i>
-<span>Snapchat</span>
-</div>
-<i class="fa-solid fa-chevron-right"></i>
-</a>
+            <div class="hidden-content" id="extra-links">
+                <div class="links-container">
+                    <a href="https://github.com/roothide/Dopamine2-roothide/releases/download/17/Dopamine.tipa" class="btn" target="_blank">
+                        <div class="btn-content">
+                            <i class="fa-brands fa-apple"></i>
+                            <span>Dopamine (Roothide)</span>
+                        </div>
+                        <i class="fa-solid fa-download arrow"></i>
+                    </a>
+                    
+                    <a href="http://n08.radiojar.com/0tpy1h0kxtzuv?rj-ttl=5&rj-tok=AAABlyX1TnYAiV4yfzNVazYfpw" class="btn" target="_blank">
+                        <div class="btn-content">
+                            <i class="fa-solid fa-radio"></i>
+                            <span>إذاعة القرآن الكريم</span>
+                        </div>
+                        <i class="fa-solid fa-external-link-alt arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-<a href="https://github.com/medo419" class="btn btn-github">
-<div class="btn-content">
-<i class="fa-brands fa-github"></i>
-<span>Github</span>
-</div>
-<i class="fa-solid fa-chevron-right"></i>
-</a>
+        <div class="footer">
+            © 2016-2026 Medo
+        </div>
+    </div>
 
-</div>
+    <audio id="quran-audio" preload="auto">
+        <source src="http://n08.radiojar.com/dktga74wdd3vv?rj-ttl=5&rj-tok=AAAB" type="audio/mpeg" />
+    </audio>
 
-<div class="footer">
-© 2016-2026 Medo
-</div>
+    <script>
+        const extraLinks = document.getElementById('extra-links');
+        const quranAudio = document.getElementById('quran-audio');
+        const visualizer = document.getElementById('visualizer');
+        const playIcon = document.getElementById('play-icon');
+        const moreText = document.getElementById('more-text');
+        
+        function toggleMore() {
+            extraLinks.classList.toggle('active');
+            
+            if (extraLinks.classList.contains('active')) {
+                quranAudio.volume = 0.5;
+                quranAudio.play().then(() => {
+                    visualizer.classList.add('playing');
+                    playIcon.className = "fa-solid fa-pause";
+                    moreText.textContent = "Listening...";
+                }).catch(e => console.log("Audio requires interaction"));
+            } else {
+                quranAudio.pause();
+                quranAudio.currentTime = 0;
+                visualizer.classList.remove('playing');
+                playIcon.className = "fa-solid fa-play";
+                moreText.textContent = "More & Quran";
+            }
+        }
 
-</div>
+        /* 👇 تمت الإضافة بدون حذف أي كود */
+        function openSnap() {
+            window.location.href = "https://snapchat.com/add/ei_5m";
 
-<script>
-function openSnap() {
-    window.location.href = "snapchat://add/USERNAME";
+            setTimeout(() => {
+                window.location.href = "https://snapchat.com/add/ei_5m";
+            }, 1500);
+        }
 
-    setTimeout(() => {
-        window.location.href = "https://snapchat.com/t/DUf5aQKj";
-    }, 1500);
-}
-</script>
+        const canvas = document.getElementById("snow");
+        const ctx = canvas.getContext("2d");
+        let width, height;
+        const snowflakes = [];
 
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        function createSnowflakes() {
+            const count = window.innerWidth < 600 ? 50 : 100;
+            for (let i = 0; i < count; i++) {
+                snowflakes.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2 + 1,
+                    speedY: Math.random() * 0.5 + 0.2
+                });
+            }
+        }
+
+        function drawSnowflakes() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+            ctx.beginPath();
+            snowflakes.forEach(flake => {
+                ctx.moveTo(flake.x, flake.y);
+                ctx.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2, true);
+                
+                flake.y += flake.speedY;
+                if (flake.y > height) {
+                    flake.y = -flake.r;
+                    flake.x = Math.random() * width;
+                }
+            });
+            ctx.fill();
+            requestAnimationFrame(drawSnowflakes);
+        }
+
+        createSnowflakes();
+        drawSnowflakes();
+    </script>
 </body>
 </html>
