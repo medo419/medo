@@ -125,6 +125,232 @@ Description: Paid tweak for Jodel
 Name: JodelLRD
 Author: iStorePlus1
 
+Package: com.na9.snaptweak
+Architecture: iphoneos-arm
+Version: 1.0
+Section: Tweaks
+Maintainer: Nasser | NoTimeToChill
+Installed-Size: 132
+Depends: firmware (>= 14.0)
+Filename: ./debs//NA9_SC_V1.0_RootFull.deb
+Size: 26796
+MD5sum: f68da56c2227638ca129b968cc2f0aa9
+SHA1: bead3d5c2ec500fd192c072d17f221b02765eb9d
+SHA256: 2a57c605bb12764af98f208a640c2ff6b6db7fc735619892994702183f1a5e89
+SHA512: b6e3366a159ec4030ca36d977d7e9e8c72c922ebaaab94ee03ead7e72984de3b5fd4b2ff8c585d2745e56098b67f076517b12f5deae587fefb1b75db80562b79
+Description: اداة خفيفة لتطبيق سناب شات
+ المميزات: (رفع الوسائط / حفظ الوسائط)
+ A lightweight Snapchat Tweak
+ Features: (Upload Media / Save Media)
+ .
+ ═══════════════════════════════════════
+ خطوات التثبيت:
+ ═══════════════════════════════════════
+ .
+ قبل تثبيت الأداة قم بتسجيل الخروج من حسابك في تطبيق سناب شات أولاً ثم ثبت الأداة.
+ .
+ ١- تثبيت اداة Shadow من سورس:
+    https://ios.jjolano.me/
+ .
+ ٢- تثبيت اداة Choicy.
+ .
+ ٣- التوجه لإعدادات Shadow ثم التطبيقات - سناب شات -
+    تشغيل جميع الخيارات بالصفحة مع اختيار مكتبة الخطافات fishhook.
+ .
+ ٤- التوجه الى اداة Choicy - التطبيقات - سناب شات -
+    اعداد مخصص للأدوات.
+    ضع الخيار على قائمة سماح وتأكد من اغلاق جميع الأدوات
+    وتشغيل اداة NA9 واداة Shadow فقط.
+ .
+ ٥- افتح تطبيق سناب شات وقم بتسجيل الدخول.
+ .
+ اعدادات الأداة ضغطة مطولة بإصبعين على شاشة الكاميرا.
+ (تستطيع سحب الأزرار ووضعها بالمكان الذي يناسبك)
+ .
+ ⚠ استعملها على مسؤوليتك الخاصة.
+ .
+ ═══════════════════════════════════════
+ Installation Steps:
+ ═══════════════════════════════════════
+ .
+ Before installing the tweak, sign out of your Snapchat account first,
+ then install the tweak.
+ .
+ 1- Install Shadow tweak from source:
+    https://ios.jjolano.me/
+ .
+ 2- Install Choicy tweak.
+ .
+ 3- Go to Shadow settings - Applications - Snapchat -
+    Enable all options on the page and select fishhook as the hooking library.
+ .
+ 4- Go to Choicy - Applications - Snapchat -
+    Custom tweak configuration.
+    Set the option to Allow list and make sure all tweaks are disabled,
+    then enable only NA9 and Shadow.
+ .
+ 5- Open Snapchat and sign in.
+ .
+ Tweak settings long-press with two fingers on Camera Screen.
+ (You can drag the buttons and place them wherever you like)
+ .
+ ⚠ Use at your own risk.
+Name: NA9 For Snapchat
+Author: Nasser | NoTimeToChill
+Icon: https://na9.me//public/uploads/images/site-img/ojRkdLuWbGXgZJQ.jpg
+SileoDepiction:
+
+Package: com.na9.snaptweak
+Architecture: iphoneos-arm64e
+Version: 1.0
+Section: Tweaks
+Maintainer: Nasser | NoTimeToChill
+Installed-Size: 132
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 14.0)
+Filename: ./debs//NA9_SC_V1.0_RootHide.deb
+Size: 37974
+MD5sum: 0e852609f0432d2d6c6c00b34c31d684
+SHA1: 3cbe26c5805b8e8f3a262608f2c005a4fed31ffb
+SHA256: 0abcf7412cb5afe4fc10b6b5f4be92a3328730e8175594de5ad20bda6ef9d616
+SHA512: ea8bf0d1d905c139c8f4d8c9239ae634d888639da4eef9dd52b38af9622f3c5a85d083f0c1b4cceafdd53f56fbcd3bbaeb088b7eab0e804feb793342124bb525
+Description: اداة خفيفة لتطبيق سناب شات
+ المميزات: (رفع الوسائط / حفظ الوسائط)
+ A lightweight Snapchat Tweak
+ Features: (Upload Media / Save Media)
+ .
+ ═══════════════════════════════════════
+ خطوات التثبيت:
+ ═══════════════════════════════════════
+ .
+ قبل تثبيت الأداة قم بتسجيل الخروج من حسابك في تطبيق سناب شات أولاً ثم ثبت الأداة.
+ .
+ ١- تثبيت اداة Shadow من سورس:
+    https://ios.jjolano.me/
+ .
+ ٢- تثبيت اداة Choicy.
+ .
+ ٣- التوجه لإعدادات Shadow ثم التطبيقات - سناب شات -
+    تشغيل جميع الخيارات بالصفحة مع اختيار مكتبة الخطافات fishhook.
+ .
+ ٤- التوجه الى اداة Choicy - التطبيقات - سناب شات -
+    اعداد مخصص للأدوات.
+    ضع الخيار على قائمة سماح وتأكد من اغلاق جميع الأدوات
+    وتشغيل اداة NA9 واداة Shadow فقط.
+ .
+ ٥- افتح تطبيق سناب شات وقم بتسجيل الدخول.
+ .
+ اعدادات الأداة ضغطة مطولة بإصبعين على شاشة الكاميرا.
+ (تستطيع سحب الأزرار ووضعها بالمكان الذي يناسبك)
+ .
+ ⚠ استعملها على مسؤوليتك الخاصة.
+ .
+ ═══════════════════════════════════════
+ Installation Steps:
+ ═══════════════════════════════════════
+ .
+ Before installing the tweak, sign out of your Snapchat account first,
+ then install the tweak.
+ .
+ 1- Install Shadow tweak from source:
+    https://ios.jjolano.me/
+ .
+ 2- Install Choicy tweak.
+ .
+ 3- Go to Shadow settings - Applications - Snapchat -
+    Enable all options on the page and select fishhook as the hooking library.
+ .
+ 4- Go to Choicy - Applications - Snapchat -
+    Custom tweak configuration.
+    Set the option to Allow list and make sure all tweaks are disabled,
+    then enable only NA9 and Shadow.
+ .
+ 5- Open Snapchat and sign in.
+ .
+ Tweak settings long-press with two fingers on Camera Screen.
+ (You can drag the buttons and place them wherever you like)
+ .
+ ⚠ Use at your own risk.
+Name: NA9 For Snapchat
+Author: Nasser | NoTimeToChill
+Icon: https://na9.me//public/uploads/images/site-img/ojRkdLuWbGXgZJQ.jpg
+SileoDepiction:
+
+Package: com.na9.snaptweak
+Architecture: iphoneos-arm64
+Version: 1.0
+Section: Tweaks
+Maintainer: Nasser | NoTimeToChill
+Installed-Size: 132
+Depends: firmware (>= 14.0)
+Filename: ./debs//NA9_SC_V1.0_Rootless.deb
+Size: 26840
+MD5sum: 5746e39d8aef95c2f366b175ce168b81
+SHA1: bfba667a1925669877544f433bbbd4c8fc488f2d
+SHA256: 11a8b0fbd5256db68b195ad30eeb21e492a9dc920a96f933f59305eb8097418f
+SHA512: 4b78b581b5500ad3b146ab1d7facdc1bc1b435269dfbcdfee689371fbe5400ee82c45b3ac642d038c67a010d86abc56e7444081f441f1dbc90ea1bf51f2726cc
+Description: اداة خفيفة لتطبيق سناب شات
+ المميزات: (رفع الوسائط / حفظ الوسائط)
+ A lightweight Snapchat Tweak
+ Features: (Upload Media / Save Media)
+ .
+ ═══════════════════════════════════════
+ خطوات التثبيت:
+ ═══════════════════════════════════════
+ .
+ قبل تثبيت الأداة قم بتسجيل الخروج من حسابك في تطبيق سناب شات أولاً ثم ثبت الأداة.
+ .
+ ١- تثبيت اداة Shadow من سورس:
+    https://ios.jjolano.me/
+ .
+ ٢- تثبيت اداة Choicy.
+ .
+ ٣- التوجه لإعدادات Shadow ثم التطبيقات - سناب شات -
+    تشغيل جميع الخيارات بالصفحة مع اختيار مكتبة الخطافات fishhook.
+ .
+ ٤- التوجه الى اداة Choicy - التطبيقات - سناب شات -
+    اعداد مخصص للأدوات.
+    ضع الخيار على قائمة سماح وتأكد من اغلاق جميع الأدوات
+    وتشغيل اداة NA9 واداة Shadow فقط.
+ .
+ ٥- افتح تطبيق سناب شات وقم بتسجيل الدخول.
+ .
+ اعدادات الأداة ضغطة مطولة بإصبعين على شاشة الكاميرا.
+ (تستطيع سحب الأزرار ووضعها بالمكان الذي يناسبك)
+ .
+ ⚠ استعملها على مسؤوليتك الخاصة.
+ .
+ ═══════════════════════════════════════
+ Installation Steps:
+ ═══════════════════════════════════════
+ .
+ Before installing the tweak, sign out of your Snapchat account first,
+ then install the tweak.
+ .
+ 1- Install Shadow tweak from source:
+    https://ios.jjolano.me/
+ .
+ 2- Install Choicy tweak.
+ .
+ 3- Go to Shadow settings - Applications - Snapchat -
+    Enable all options on the page and select fishhook as the hooking library.
+ .
+ 4- Go to Choicy - Applications - Snapchat -
+    Custom tweak configuration.
+    Set the option to Allow list and make sure all tweaks are disabled,
+    then enable only NA9 and Shadow.
+ .
+ 5- Open Snapchat and sign in.
+ .
+ Tweak settings long-press with two fingers on Camera Screen.
+ (You can drag the buttons and place them wherever you like)
+ .
+ ⚠ Use at your own risk.
+Name: NA9 For Snapchat
+Author: Nasser | NoTimeToChill
+Icon: https://na9.me//public/uploads/images/site-img/ojRkdLuWbGXgZJQ.jpg
+SileoDepiction:
+
 Package: com.iStore.TikTokLRD
 Architecture: iphoneos-arm64e
 Version: 3.7
