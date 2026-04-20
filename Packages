@@ -34,6 +34,39 @@ Name: AutoRepoManager
 Icon: https://i.imgur.com/ZKCJQvf.jpeg
 Author: ipapplus
 
+Package: com.nowesr1.dltiktok
+Architecture: iphoneos-arm64
+Version: 2.1.4
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs//DLTikTok.Free.2.1.4.arm64.deb
+Size: 289744
+MD5sum: a182c6fe19590f784be0a331698eb3d7
+SHA1: 002b3f4ffdea87929b98b0c4128625ce83e92533
+SHA256: f57389bd451be5a4978720f4f2434a94cc4e479f7f3bf4d5934a0a7ab2b58cfa
+SHA512: bbeff897a75360cfb83e90a548b47dce61dfc0da82338cc2950687f7d0e4e4d6036413adf4052cbe3bea5a5508f013424d11b733f7b7e382a558cc7daa7e84bc
+Description: free DLTikTok no license required best compatible with TikTok V42.2.0
+Name: DLTikTok Free
+Author: ZeroDeadBeef
+
+Package: com.nowesr1.dltiktok
+Architecture: iphoneos-arm64e
+Version: 2.1.4
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate
+Filename: ./debs//DLTikTok.Free.2.1.4.arm64e.deb
+Size: 291456
+MD5sum: 2af2b2235254a6e9750404236b521bbb
+SHA1: 87164eb3bac71035af0f23f5b6dd1f0c09d6237b
+SHA256: 352b57744e1d94ba119b386e2c12b11be5bdd9e57bd6f1c4bc0ba1545133ef40
+SHA512: b398c96053f756c028b05cf2e834c3d8301b6ba1cf9b612ecddb3c049c0a38070966175aa037a76741eb1371ff9ba9680da83f89f8c469dd6bcb5d966f5ba750
+Description: free DLTikTok no license required best compatible with TikTok V42.2.0
+Name: DLTikTok Free
+Author: ZeroDeadBeef
+
 Package: com.tigisoftware.filza64bit
 Architecture: iphoneos-arm64
 Version: 4.0.1-4
