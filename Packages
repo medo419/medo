@@ -517,6 +517,40 @@ Description: This tool provides the way to WIPE, BACKUP, RESTORE AppData for ins
 Name: Apps Manager
 Author: TIGI Software
 
+Package: com.wgold.whatsapp
+Architecture: iphoneos-arm64
+Version: 1.8
+Section: Tweaks
+Maintainer: WGold Team
+Installed-Size: 8128
+Depends: mobilesubstrate
+Filename: ./debs//com.wgold.whatsapp_1.8_iphoneos-arm64 (1).deb
+Size: 6247076
+MD5sum: 923ff4ac63e4740d27fd4d9b2bf57143
+SHA1: dce03bdd57688111b71c0209b9352e6c013de7be
+SHA256: 4027c46ffc1212d3808078158b1eaf4545198201b7ba90c72aafc18be95efcfc
+SHA512: 9e967987e18fcbf8e3f49232ec49d5656f2aeb3c28e0b889bb15de4c8e4ccbbdf605bb4f9253ff0144e38f8d4058c07f85ed184b5ff64f9cff8f5f3c447c4e9b
+Description: واتساب جولد - تويك للواتساب مع ميزات إضافية
+Name: WGold
+Author: WGold Team
+
+Package: com.wgold.whatsapp
+Architecture: iphoneos-arm64
+Version: 1.8
+Section: Tweaks
+Maintainer: WGold Team
+Installed-Size: 8128
+Depends: mobilesubstrate
+Filename: ./debs//com.wgold.whatsapp_1.8_iphoneos-arm64.deb
+Size: 6247488
+MD5sum: 6ff44c04fdf36bfbd8fcdae35ad35fb4
+SHA1: 22dfe085a884bc93487f4d181fe11f1ca515aab4
+SHA256: 80fdb1376c426f0f5c863bc13db8276e84e1ce6eced623d419b0f979b231f189
+SHA512: ce459ff2bb5547d9f578eadd1412be6396027859aa4dec1ee34e71593eb29ed84f250325dea07346ff5dba0a2b998f5ae2a7b903157cd8d826eb1f93952a4dce
+Description: واتساب جولد - تويك للواتساب مع ميزات إضافية
+Name: WGold
+Author: WGold Team
+
 Package: dev.objcmsgsend.iota.RivesDev
 Architecture: iphoneos-arm64e
 Version: 2.4
