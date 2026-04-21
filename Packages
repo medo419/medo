@@ -418,6 +418,23 @@ Name: WatusiTools
 Author: Fouad Raheb <support@fouadraheb.com>
 Depiction: https://apt.fouadraheb.com/package/com.f0u4d.watusitools
 
+Package: com.bandarhl.bhinsta
+Architecture: iphoneos-arm64
+Version: 0.0.1
+Section: Tweaks
+Maintainer: Bandar Alruwaili
+Installed-Size: 408
+Depends: mobilesubstrate, ws.hbang.common
+Filename: ./debs//com.bandarhl.bhinsta_0.0.1_iphoneos-arm64.deb
+Size: 69168
+MD5sum: e1d581d58c173126bb8d2f02fc8dcbe8
+SHA1: eb6812a9f700a16a2616e810692d524b9379483c
+SHA256: 20235ab4ac949b9356905c0d24d0bae62395e37b670247e9826dfbaadf9b8abb
+SHA512: a6f08ff83f77ae8a5790246e47bd6ae97b0637099df335cd33decc0856a3aeed2a46405fec44c7dc72a5ce772eb03da636a1164b71c54666877a86edd5b32a40
+Description: An awesome tweak for Instagram!
+Name: BHInsta
+Author: Bandar Alruwaili
+
 Package: com.bandarhl.bhtwitter
 Architecture: iphoneos-arm
 Version: 4.4
