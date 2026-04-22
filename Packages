@@ -694,3 +694,20 @@ Description: An awesome tweak for Instagram!
 Name: Theta
 Author: objc_msgSend
 
+Package: com.cr4zy.nyxian
+Architecture: iphoneos-arm64e
+Version: 0.9.0
+Section: Utilities
+Maintainer: cr4zyengineer
+Filename: ./debs//nyxian_0.9.1_iphoneos-arm64e.deb
+Size: 51279296
+MD5sum: dc67d5d26475877660d354920d205b64
+SHA1: 586785fdb1839418ba7d0c926869b4ff600a9181
+SHA256: d233c8cb967d2b621f5f8115999f6d406825b015e60bca3fcbc382f14ed4bf9a
+SHA512: ae324ee020dee4afdcbe0b13e189baf74ff1fe4f9f658f76bb8217710024ab1ef3abecd558571b628f6c659bf362884ab77649919b85b9ae1004d84ed447a8d3
+Description: Full fledged Xcode-like IDE for iOS
+Tag: role::hacker
+Name: Nyxian
+Icon: https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/preview.png
+Author: cr4zyengineer
+
